@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+
+
+<form style="width:50%" action="~/Home/CreateProject" method="post" class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Proje Ekle</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label"  for="textinput">Proje Kodu</label>
+            <div class="col-md-5">
+                <input id="ProjectCode" name="ProjectCode" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Proje Adı</label>
+            <div class="col-md-5">
+                <input id="NickName" name="NickName" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+        </div>
+        
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton"></label>
+            <div class="col-md-4">
+                <button id="singlebutton" type="submit" name="singlebutton" class="btn btn-success">Ekle</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+

@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = "~/Views/_LayoutLogin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <form class="form-horizontal" action="~/Home/Login" method="post">
+        <fieldset>
+
+            <!-- Form Name -->
+           <legend>@ViewData["LoginError"]</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Kullanıcı Adı</label>
+                <div class="col-md-2">
+                    <input id="UserName" name="UserName" type="text" placeholder="" class="form-control input-md" required="">
+
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="passwordinput">Şifre</label>
+                <div class="col-md-2">
+                    <input id="Password" name="Password" type="password" placeholder="" class="form-control input-md" required="">
+
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton"></label>
+                <div class="col-md-4">
+                    <button  type="submit"  class="btn btn-success">Giriş</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</body>
+</html>

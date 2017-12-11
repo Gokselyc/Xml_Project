@@ -1,0 +1,38 @@
+﻿@model ProjectDefinition.Models.Service
+
+<div>
+
+    <label class="col-md-4 control-label">@Html.DisplayNameFor(model=> model.ProjectCode)</label>   
+    <span class="col-md-4">@Html.DisplayFor(model=> model.ProjectCode)</span>
+    <br />
+    <br />
+    <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.ServiceName)</label>
+    <span class="col-md-4">@Html.DisplayFor(model => model.ServiceName)</span>
+    <br />
+    <br />
+    <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.RemoteEndPointInt)</label>
+    <span class="col-md-4">@Html.DisplayFor(model => model.RemoteEndPointInt)</span>
+    <br />
+    <br />
+    <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.RemoteEndPointUat)</label>
+    <span class="col-md-4">@Html.DisplayFor(model => model.RemoteEndPointUat)</span>
+    <br />
+    <br />
+    <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.RemoteEndPointProd)</label>
+    <span class="col-md-4">@Html.DisplayFor(model => model.RemoteEndPointProd)</span>
+    <br />
+    <br />
+    <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.GatewayEndPointInt)</label>
+    <span class="col-md-4">@Html.DisplayFor(model => model.GatewayEndPointInt)</span>
+    <br />
+    <br />
+    <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.GatewayEndPointUat)</label>
+    <span class="col-md-4">@Html.DisplayFor(model => model.GatewayEndPointUat)</span>
+    <br />
+    <br />
+    <label class="col-md-4 control-label">@Html.DisplayNameFor(model => model.GatewayEndPointProd)</label>
+    <span class="col-md-4"><a target="_blank" href=@("http://"+ Model.GatewayEndPointProd)>@Model.GatewayEndPointProd</a></span>
+    <br />
+        
+    </div>
+   

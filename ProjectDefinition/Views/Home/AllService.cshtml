@@ -1,0 +1,91 @@
+﻿@model IEnumerable<ProjectDefinition.Models.Service>
+
+@{
+    ViewBag.Title = "AllService";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">Service Listesi</div>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RemoteEndPointProd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GatewayEndPointProd)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RemoteEndPointProd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GatewayEndPointProd)
+                </td>
+                <td>
+                    <button class="btn btn-success" onclick="ServiceDetail('@item.ProjectCode','@item.ServiceName');" data-toggle="modal" data-target="#myModal">Detay</button>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Servis Detayı</h4>
+            </div>
+            <div id="divData" class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        function ServiceDetail(projectCode,serviceName) {
+
+            //$('#divData').html();
+
+            $.ajax({
+                type: "POST",
+               
+                url: "@(Url.Action("GetServiceDetail", "Home"))",
+                data: { ProjectCode: projectCode, ServiceName: serviceName },
+                
+                success: function (data) {
+                    $('#divData').html(data);
+                },
+                error: function (xhr, err) {
+                    alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status);
+                    alert("responseText: " + xhr.responseText);
+                }
+            });
+        }
+    </script>

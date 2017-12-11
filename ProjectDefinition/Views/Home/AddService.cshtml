@@ -1,0 +1,79 @@
+﻿@model ProjectDefinition.Models.Service
+@{
+    ViewBag.Title = "AddService";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h2>Servis Ekle</h2>
+<hr />
+<form style="width:50%" action="~/Home/AddService" method="post" class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Projenin Kodu</label>
+            <div class="col-md-5">
+                <input id="ProjectCode" name="ProjectCode" type="text" value="@Model.ProjectCode" placeholder="" class="form-control input-md">
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Servisin Adı</label>
+            <div class="col-md-5">
+                <input id="ServiceName" name="ServiceName" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">RemoteEndPointInt</label>
+            <div class="col-md-5">
+                <input id="RemoteEndPointInt" name="RemoteEndPointInt" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">RemoteEndPointUat</label>
+            <div class="col-md-5">
+                <input id="RemoteEndPointUat" name="RemoteEndPointUat" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">RemoteEndPointProd</label>
+            <div class="col-md-5">
+                <input id="RemoteEndPointProd" name="RemoteEndPointProd" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">GatewayEndPointInt</label>
+            <div class="col-md-5">
+                <input id="GatewayEndPointInt" name="GatewayEndPointInt" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">GatewayEndPointUat</label>
+            <div class="col-md-5">
+                <input id="GatewayEndPointUat" name="GatewayEndPointUat" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">GatewayEndPointProd</label>
+            <div class="col-md-5">
+                <input id="GatewayEndPointProd" name="GatewayEndPointProd" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+        </div>
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton"></label>
+            <div class="col-md-4">
+                <button id="singlebutton" type="submit" name="singlebutton" class="btn btn-success">Ekle</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
